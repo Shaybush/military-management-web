@@ -1,2 +1,177 @@
-
-
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+  }
+  
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .chat-container {
+    height: calc(90vh - 150px);
+    overflow-y: auto;
+  }
+  
+  .typing-container {
+    min-height: 25px;
+  }
+  
+  .chat-container .chat-messages {
+    height: calc(100% - 100px);
+    background-color: #f6f4f4;
+  }
+  
+  .chat-container .chat-form {
+    height: 100px;
+    background-color: #f6f4f4;
+  }
+  
+  /* div home page - start */
+  
+  /* height screen for 100vh */
+  .h-100 {
+    height: 100vh !important;
+  }
+  
+  .mw-75 {
+    max-width: 75%;
+  }
+  /* div home page - end */
+  
+  /* google start */
+  .btn-google {
+    color: #545454;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 1px #ddd;
+    display: flex;
+    justify-content: center;
+  }
+  /* google end */
+  
+  /* drop down button start */
+  .btn-primary {
+    background-color: transparent !important;
+    --bs-btn-border-color: none !important;
+  }
+  /* drop down button end */
+  
+  /* chat style - image profile - start */
+  .rounded-pill {
+    width: 10%;
+    height: 35px;
+    margin-right: 5px;
+  }
+  /* chat style - image profile - end */
+  
+  /* colors */
+  
+  /* text color */
+  .text-teal-green {
+    color: #128c7e;
+  }
+  
+  .text-teal-dark {
+    color: #075e54;
+  }
+  
+  .text-light-green {
+    color: #25d366;
+  }
+  
+  .text-blue {
+    color: #34b7f1;
+  }
+  /* text color - end */
+  
+  /* bg */
+  .bg-teal-green {
+    background-color: #128c7e;
+  }
+  
+  .bg-teal-dark {
+    background-color: #075e54;
+  }
+  
+  .bg-light-green {
+    background-color: #25d366;
+  }
+  
+  .bg-blue {
+    background-color: #34b7f1;
+  }
+  /* bg - end */
+  
+  /* borders */
+  .border-teal-green {
+    border: 1px solid #128c7e;
+  }
+  
+  .border-teal-dark {
+    border: 1px solid #075e54;
+  }
+  
+  .border-light-green {
+    border: 1px solid #25d366;
+  }
+  
+  .border-blue {
+    border: 1px solid #34b7f1;
+  }
+  /* borders - end */
+  
+  /* colors - end */
+  
+  /* style chat - start*/
+  .ms-5 {
+    margin-left: 85px !important;
+  }
+  .me-5 {
+    margin-right: 5px !important;
+  }
+  /* style chat - end*/
+  
+  /* style image on chat - start*/
+  .user-image-profile {
+    height: 50px;
+    padding-left: 5px;
+    margin-bottom: 10px;
+  }
+  /* style image on chat - end*/
+  
+  /* style div message from host - start */
+  .chat-group-host-container {
+    margin-right: 60px !important;
+  }
+  /* style div message from host - end */
+  
+  /* style div message from guest - start */
+  .chat-group-guest-container {
+    margin-left: 60px !important;
+  }
+  /* style div message from guest - end */
+  
+  /* dropdown override */
+  #dropdown-button {
+    padding: 0 !important;
+    margin: 0 !important;
+    text-align: left;
+  }
+  #dropdown-button::after {
+    display: none;
+  }
+  
+  .dropdown-menu {
+    padding: 0 !important;
+  }
+  /* dropdown override - end */
+  
