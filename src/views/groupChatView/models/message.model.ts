@@ -3,7 +3,7 @@ export interface IMessageModel {
     userId: string;
     img: string;
     msg: string;
-    msgId: string;
+    msg_id: string;
     time: string;
 }
 

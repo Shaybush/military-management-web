@@ -1,3 +1,4 @@
 export interface ILoaderSpinnerCircleModel {
-    color?: string
+    color?: string,
+    width?: string;
 }

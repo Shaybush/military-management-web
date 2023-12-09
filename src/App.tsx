@@ -1,11 +1,13 @@
+import { GoogleOAuthProvider } from "@react-oauth/google";
 import AppRoutes from "./AppRoutes.tsx";
-import React from "react";
 
 const App = () => {
   return (
-    <React.Fragment>
+    <GoogleOAuthProvider
+      clientId={`${import.meta.env.VITE_GOOGLE_ID}.apps.googleusercontent.com`}
+    >
       <AppRoutes />
-    </React.Fragment>
+    </GoogleOAuthProvider>
   );
 };
 
