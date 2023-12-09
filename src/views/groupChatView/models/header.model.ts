@@ -1,5 +1,4 @@
 export interface IHeaderModel {
-    userData:{
       email: string;
       family_name: string;
       given_name: string;
@@ -8,5 +7,4 @@ export interface IHeaderModel {
       name: string;
       picture: string;
       verified: boolean;
-    }
    }
