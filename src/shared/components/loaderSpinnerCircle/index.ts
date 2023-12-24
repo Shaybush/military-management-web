@@ -1,1 +1,1 @@
-export { default } from './loaderSpinnerCircle'
+export { default } from './loaderSpinnerCircle';

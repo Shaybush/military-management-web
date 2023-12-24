@@ -1,1 +1,1 @@
-export { default } from './mapTrackerView'
+export { default } from './mapTrackerView';

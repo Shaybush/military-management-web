@@ -1,3 +1,3 @@
 export interface IHeaderModel {
-    picture: string;
+	picture: string;
 }

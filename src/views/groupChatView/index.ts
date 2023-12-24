@@ -1,1 +1,1 @@
-export { default } from './groupChatView'
+export { default } from './groupChatView';
