@@ -16,7 +16,7 @@ const GroupChatView: FC = () => {
 	const [allMessage, setAllMessage] = useState<IMessageModel[]>([]);
 	const [userNameFromSocket, setUserNameFromSocket] = useState('');
 	const [typing, setTyping] = useState(false);
-	const [userData, setUserData] = useState<IUserDataModel['data']>(JSON.parse(localStorage['userData']) || {});
+	const [_userData, _setUserData] = useState<IUserDataModel['data']>(JSON.parse(localStorage['userData']) || {});
 	const socket = io('http://localhost:3001');
 	const inputRef = useRef<HTMLInputElement>(null);
 
@@ -38,7 +38,7 @@ const GroupChatView: FC = () => {
 		socket.on('message_delete_event', onMessageDelete);
 		socket.on('typing-from-server', (id: string, name: string) => {
 			// checking if received user typing is current user
-			if (userData?.id !== id) typingEvent(name);
+			if (_userData?.id !== id) typingEvent(name);
 		});
 	};
 
@@ -65,10 +65,10 @@ const GroupChatView: FC = () => {
 		const message: IMessageModel = {
 			msg: inputRef.current?.value || '',
 			msg_id: crypto.randomUUID(),
-			userId: userData?.id || '',
-			fullName: `${userData?.given_name} ${userData?.family_name}`,
+			userId: _userData?.id || '',
+			fullName: `${_userData?.given_name} ${_userData?.family_name}`,
 			time: getTimeFromCurrentUnix(Date.now()),
-			img: userData?.picture || '',
+			img: _userData?.picture || '',
 		};
 		// clear input
 		// inputRef.current.value dont working
@@ -87,7 +87,7 @@ const GroupChatView: FC = () => {
 
 	return (
 		<React.Fragment>
-			<Header picture={userData?.picture || ''} />
+			<Header picture={_userData?.picture || ''} />
 			<div className='container'>
 				<div className='w-100 border border-3 rounded-2 border-dark mx-auto col-md-6 mt-3'>
 					<div className='p-2 chat-container'>
@@ -99,18 +99,18 @@ const GroupChatView: FC = () => {
 										allMessage[i]?.userId !== allMessage[i - 1]?.userId ? (
 											<div
 												className={`d-flex me-5 mb-2 align-items-center px-2 ${
-													item.userId === userData.id && 'justify-content-end'
+													item.userId === _userData.id && 'justify-content-end'
 												}`}
 											>
-												{item.userId !== userData.id && (
+												{item.userId !== _userData.id && (
 													<img src={item.img} className='rounded-circle user-image-profile me-1' />
 												)}
 												<DropdownButton
 													className='col-auto mw-75'
 													id='dropdown-button'
-													title={<ChatMessage message={item} userId={userData.id} isFirstMessage={true} />}
+													title={<ChatMessage message={item} userId={_userData.id} isFirstMessage={true} />}
 												>
-													{item.userId === userData.id && (
+													{item.userId === _userData.id && (
 														<Dropdown.Item className='d-flex align-items-center' onClick={() => onDelete(item.msg_id)}>
 															<IconFile iconSrc={'delete-icon'} />
 															<p>Delete</p>
@@ -118,7 +118,7 @@ const GroupChatView: FC = () => {
 													)}
 												</DropdownButton>
 
-												{item.userId === userData.id && (
+												{item.userId === _userData.id && (
 													<img src={item.img} className='rounded-circle user-image-profile' />
 												)}
 											</div>
@@ -126,7 +126,7 @@ const GroupChatView: FC = () => {
 											// message without avatar image (sec or larger)
 											<div
 												className={`d-flex align-items-center mb-2 px-2 text-wrap ${
-													item.userId === userData.id
+													item.userId === _userData.id
 														? 'justify-content-end chat-group-host-container'
 														: 'chat-group-guest-container'
 												}`}
@@ -134,9 +134,9 @@ const GroupChatView: FC = () => {
 												<DropdownButton
 													className='col-auto mw-75'
 													id='dropdown-button'
-													title={<ChatMessage message={item} userId={userData.id} />}
+													title={<ChatMessage message={item} userId={_userData.id} />}
 												>
-													{item.userId === userData.id && (
+													{item.userId === _userData.id && (
 														<Dropdown.Item className='d-flex align-items-center' onClick={() => onDelete(item.msg_id)}>
 															<IconFile iconSrc={'delete-icon'} />
 															<p>Delete</p>
@@ -156,7 +156,7 @@ const GroupChatView: FC = () => {
 					{/* input message */}
 					<form onSubmit={onSub} className='chat-form bg-white p-2 d-flex align-items-center justify-content-center'>
 						<input
-							onChange={() => socket.emit('typing', userData.id, userData.given_name, userData.family_name)}
+							onChange={() => socket.emit('typing', _userData.id, _userData.given_name, _userData.family_name)}
 							ref={inputRef}
 							className='form-control me-1'
 							placeholder='Type here...'

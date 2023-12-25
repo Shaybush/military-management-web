@@ -8,6 +8,7 @@ import { IHeaderModel } from '../models/header.model';
 
 const Header: FC<IHeaderModel> = ({ picture }) => {
 	const navigate = useNavigate();
+
 	const logOut = () => {
 		googleLogout();
 		localStorage.removeItem('userData');

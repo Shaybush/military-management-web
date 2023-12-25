@@ -58,6 +58,7 @@ module.exports = {
 		// #########################
 		'no-debugger': 'warn', // default value is error. Disallow the use of the debugger keyword.
 		'no-unused-vars': 'off', // Solved unused variables raising an error. Using @typescript-eslint/no-unused-vars instead.
+		// '--max-warnings': -1, // default for build ignore warnings like 'setUserData' is assigned a value but never used 
 		'prefer-template': 'warn', // turns this: name + value, to `${name}${value}`
 		// 'arrow-body-style': 'error', // Makes a return with one line a one-liner without a return. if you had used plugin:prettier/recommended this would have been enabled by default.
 		// 'prefer-arrow-callback': 'off', // if you had used plugin:prettier/recommended this would have been enabled by default
