@@ -1,0 +1,52 @@
+@import "/src/style/variables.scss";
+@import "/src/style/mixin.util.scss";
+@import "/src/style/functions.scss";
+
+.chatContainer {
+	height: calc(90vh - 150px);
+	overflow-y: auto;
+	padding: 8px;
+	position: relative;
+}
+
+.typingContainer {
+	position: absolute;
+	left: 12;
+	bottom: 0;
+	background-color: color-opacity($white, 0.5);
+	display: flex;
+}
+
+.chatForm {
+	background-color: $white;
+	padding: 0 8px 8px 8px;
+	@include flex-center;
+}
+
+.userImageProfile {
+	height: 60px;
+	padding: 0 5px;
+	margin-bottom: 10px;
+	border-radius: 50%;
+
+	@media (max-width: 768px) {
+		height: 45px;
+	}
+}
+
+.hostContainer {
+	margin-right: 70px !important;
+	justify-content: end;
+
+	@media (max-width: 768px) {
+		margin-right: 55px !important;
+	}
+}
+
+.guestContainer {
+	margin-left: 70px !important;
+
+	@media (max-width: 768px) {
+		margin-left: 55px !important;
+	}
+}

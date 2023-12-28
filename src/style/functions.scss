@@ -1,0 +1,7 @@
+@function color-opacity($color, $opacity) {
+	// Ensure the opacity is between 0 and 1
+	$opacity: max(0, min($opacity, 1));
+
+	// Mix the color with a transparent version of itself
+	@return rgba($color, $opacity);
+}

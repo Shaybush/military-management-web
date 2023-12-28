@@ -6,6 +6,7 @@ const AppRoutes = () => {
 	const Login = React.lazy(() => import('./views/landingView'));
 	const GroupChatView = React.lazy(() => import('./views/groupChatView'));
 	const MapTrackerView = React.lazy(() => import('./views/mapTrackerView'));
+
 	return (
 		<Suspense
 			fallback={

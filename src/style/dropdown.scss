@@ -1,0 +1,20 @@
+#dropdown-button {
+	padding: 0 !important;
+	margin: 0 !important;
+	text-align: left;
+	background-color: transparent !important;
+	--bs-btn-border-color: none !important;
+
+	&::after {
+		display: none;
+	}
+}
+
+.dropdown-menu {
+	padding: 0 !important;
+
+	// if not content in dropdown
+	&:empty {
+		border: none !important;
+	}
+}

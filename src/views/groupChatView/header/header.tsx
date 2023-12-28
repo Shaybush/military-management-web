@@ -21,7 +21,7 @@ const Header: FC<IHeaderModel> = ({ picture }) => {
 				<IconFile iconSrc={'map-icon'} styleClass='rounded-circle me-1' width={30} height={30} />
 			</button>
 			{/* profile avatar */}
-			<DropdownButton id='dropdown-button' title={<img src={picture} className='rounded-circle me-5' />}>
+			<DropdownButton id='dropdown-button' title={<img src={picture} className='rounded-circle m-r-5 m-t-5' />}>
 				<Dropdown.Item onClick={() => logOut()}>LogOut</Dropdown.Item>
 			</DropdownButton>
 		</div>
